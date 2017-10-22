@@ -10,7 +10,6 @@
 		08CCEF278A2601CEC573E5F9 /* Pods_iOSCodingChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7881C802ED0AF7AF66E771B2 /* Pods_iOSCodingChallengeUITests.framework */; };
 		2030180864A56288D021FB0F /* Pods_iOSCodingChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360710F72C924243BDEEFE4E /* Pods_iOSCodingChallenge.framework */; };
 		6F5B5BAD1F9CED90001881CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BAC1F9CED90001881CB /* AppDelegate.swift */; };
-		6F5B5BAF1F9CED90001881CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BAE1F9CED90001881CB /* ViewController.swift */; };
 		6F5B5BB21F9CED90001881CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F5B5BB01F9CED90001881CB /* Main.storyboard */; };
 		6F5B5BB41F9CED90001881CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F5B5BB31F9CED90001881CB /* Assets.xcassets */; };
 		6F5B5BB71F9CED90001881CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F5B5BB51F9CED90001881CB /* LaunchScreen.storyboard */; };
@@ -27,6 +26,7 @@
 		6F5B5BF11F9CFA09001881CB /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BF01F9CFA09001881CB /* Coordinate.swift */; };
 		6F5B5BF51F9CFFD4001881CB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BF41F9CFFD4001881CB /* MapViewController.m */; };
 		6F5B5BF71F9D049D001881CB /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F5B5BF61F9D049D001881CB /* Map.storyboard */; };
+		6F5B5BFA1F9D0BD4001881CB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BF91F9D0BD4001881CB /* UIViewController.swift */; };
 		F5898B7D2C278617E4DAFA33 /* Pods_iOSCodingChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DE380B3969EAB00132D598 /* Pods_iOSCodingChallengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,6 @@
 		62DE380B3969EAB00132D598 /* Pods_iOSCodingChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSCodingChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F5B5BA91F9CED90001881CB /* iOSCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F5B5BAC1F9CED90001881CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6F5B5BAE1F9CED90001881CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6F5B5BB11F9CED90001881CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6F5B5BB31F9CED90001881CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F5B5BB61F9CED90001881CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		6F5B5BF31F9CFFD4001881CB /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		6F5B5BF41F9CFFD4001881CB /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		6F5B5BF61F9D049D001881CB /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		6F5B5BF91F9D0BD4001881CB /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		7881C802ED0AF7AF66E771B2 /* Pods_iOSCodingChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSCodingChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D6DD1733CBC56FE28A6071 /* Pods-iOSCodingChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCodingChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCodingChallenge/Pods-iOSCodingChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		F5567623861A94A4CACC43A4 /* Pods-iOSCodingChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCodingChallengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCodingChallengeUITests/Pods-iOSCodingChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				6F5B5BE91F9CF7B9001881CB /* Models */,
 				6F5B5BE71F9CF797001881CB /* Controllers */,
 				6F5B5BE81F9CF7A2001881CB /* Storyboards */,
-				6F5B5BAE1F9CED90001881CB /* ViewController.swift */,
+				6F5B5BF81F9D0BB4001881CB /* Extensions */,
 				6F5B5BB31F9CED90001881CB /* Assets.xcassets */,
 				6F5B5BB51F9CED90001881CB /* LaunchScreen.storyboard */,
 				6F5B5BB81F9CED90001881CB /* Info.plist */,
@@ -212,6 +212,15 @@
 				6F5B5BF01F9CFA09001881CB /* Coordinate.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		6F5B5BF81F9D0BB4001881CB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6F5B5BF91F9D0BD4001881CB /* UIViewController.swift */,
+			);
+			name = Extensions;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		C2B11747E42B25B45ED15ABF /* Pods */ = {
@@ -537,10 +546,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F5B5BED1F9CF986001881CB /* PoiWrapper.swift in Sources */,
-				6F5B5BAF1F9CED90001881CB /* ViewController.swift in Sources */,
 				6F5B5BEB1F9CF7F5001881CB /* PoisListViewController.swift in Sources */,
 				6F5B5BAD1F9CED90001881CB /* AppDelegate.swift in Sources */,
 				6F5B5BEF1F9CF9B5001881CB /* Poi.swift in Sources */,
+				6F5B5BFA1F9D0BD4001881CB /* UIViewController.swift in Sources */,
 				6F5B5BF11F9CFA09001881CB /* Coordinate.swift in Sources */,
 				6F5B5BE31F9CF2AF001881CB /* AppAPI.swift in Sources */,
 				6F5B5BF51F9CFFD4001881CB /* MapViewController.m in Sources */,

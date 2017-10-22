@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 import SVProgressHUD
+import Mapbox
 
 class PoisListViewController: UIViewController {
 
@@ -17,9 +18,11 @@ class PoisListViewController: UIViewController {
     
     private let mapStoryboardIdentifier = "Map"
     private let mapVCIdentifier = "MapViewController"
-    private let hamburgBounds =  (53.356523, 9.625692, 53.817100, 10.444173)
     private let viewTitle = NSLocalizedString("TestTaxi", comment: "View title")
     private let mapButtonTitle = NSLocalizedString("Map", comment: "Button title switch to map")
+    private let hamburgBounds =   MGLCoordinateBounds(
+        sw: CLLocationCoordinate2D(latitude: 53.356523, longitude: 9.625692),
+        ne: CLLocationCoordinate2D(latitude: 53.817100, longitude: 10.444173))
     
     private var isRequestSent = true
     

@@ -10,14 +10,14 @@ import Foundation
 import ObjectMapper
 import CoreLocation
 
-class Poi: Mappable {
+class Poi: NSObject, Mappable {
     var id = 0
     var coordinate: Coordinate = Coordinate()
     var heading = 0.0
     var state = ""
     var type = ""
     
-    init() {}
+    override init() {}
     
     required init?(map: Map) {}
     

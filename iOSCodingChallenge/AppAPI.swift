@@ -8,9 +8,10 @@
 
 import Foundation
 import Alamofire
+import Mapbox
 
 protocol RemoteApi {
-    func getPoiListBy(bounds: (Double, Double, Double,Double)) -> DataRequest
+    func getPoiListBy(bounds: MGLCoordinateBounds) -> DataRequest
 }
 
 public class RemoteApiFactory {
@@ -30,13 +31,13 @@ private class API: RemoteApi {
         baseUrl = apiUrl
     }
     
-    func getPoiListBy(bounds: (Double, Double, Double,Double)) -> DataRequest {
+    func getPoiListBy(bounds: MGLCoordinateBounds) -> DataRequest {
         
         let params: [String: Any] = [
-            "p1Lat": bounds.0,
-            "p1Lon": bounds.1,
-            "p2Lat": bounds.2,
-            "p2Lon": bounds.3,
+            "p1Lat": bounds.sw.latitude,
+            "p1Lon": bounds.sw.longitude,
+            "p2Lat": bounds.ne.latitude,
+            "p2Lon": bounds.ne.longitude,
             ]
         
         return manager.requestJSON(.get, url: "", body: nil, parameters: params, encoding: URLEncoding.default)

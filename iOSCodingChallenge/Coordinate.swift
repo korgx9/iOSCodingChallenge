@@ -10,11 +10,11 @@ import Foundation
 import ObjectMapper
 import CoreLocation
 
-class Coordinate: Mappable {
+class Coordinate: NSObject, Mappable {
     var latitude = 0.0
     var longitude = 0.0
     
-    init() {}
+    override init() {}
     
     required init?(map: Map) {}
     

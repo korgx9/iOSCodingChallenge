@@ -9,10 +9,10 @@
 import Foundation
 import ObjectMapper
 
-class PoiWrapper: Mappable {
+class PoiWrapper: NSObject, Mappable {
     var pois: [Poi] = [Poi]()
     
-    init() {}
+    override init() {}
     
     required init?(map: Map) {}
     
