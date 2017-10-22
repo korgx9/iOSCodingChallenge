@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Poi Details View Controller-->
+        <scene sceneID="rdI-qU-ESb">
+            <objects>
+                <viewController storyboardIdentifier="PoiDetailsViewController" id="lSl-Gc-hUq" customClass="PoiDetailsViewController" customModule="TestTaxi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ac8-4p-9GC"/>
+                        <viewControllerLayoutGuide type="bottom" id="GqG-Wi-QIH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9wq-6t-LS5">
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="350"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRa-Un-FRw" customClass="MGLMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="340" height="200"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="RyL-bH-6DH"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taxi " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CER-z4-rjg">
+                                <rect key="frame" x="16" y="208" width="31.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8k-Gr-gSH">
+                                <rect key="frame" x="16" y="234" width="44" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yII-WV-dtp">
+                                <rect key="frame" x="16" y="268" width="308" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance from you" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rki-mW-zxU">
+                                <rect key="frame" x="16" y="292" width="308" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="yII-WV-dtp" secondAttribute="trailing" id="37s-6i-IhW"/>
+                            <constraint firstAttribute="trailing" secondItem="wRa-Un-FRw" secondAttribute="trailing" id="3UL-Mj-eyO"/>
+                            <constraint firstItem="yII-WV-dtp" firstAttribute="leading" secondItem="9wq-6t-LS5" secondAttribute="leadingMargin" id="86M-Wo-mPk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rki-mW-zxU" secondAttribute="trailing" id="C2w-8K-u2Q"/>
+                            <constraint firstItem="Y8k-Gr-gSH" firstAttribute="top" secondItem="CER-z4-rjg" secondAttribute="bottom" constant="8" id="Dn6-Vk-xVp"/>
+                            <constraint firstItem="Y8k-Gr-gSH" firstAttribute="leading" secondItem="9wq-6t-LS5" secondAttribute="leadingMargin" id="HgV-ur-JjC"/>
+                            <constraint firstItem="yII-WV-dtp" firstAttribute="top" secondItem="Y8k-Gr-gSH" secondAttribute="bottom" constant="16" id="NNC-PZ-GAg"/>
+                            <constraint firstItem="rki-mW-zxU" firstAttribute="top" secondItem="yII-WV-dtp" secondAttribute="bottom" constant="8" id="SDS-wm-3wJ"/>
+                            <constraint firstItem="wRa-Un-FRw" firstAttribute="leading" secondItem="9wq-6t-LS5" secondAttribute="leading" id="VI5-pW-bMG"/>
+                            <constraint firstItem="CER-z4-rjg" firstAttribute="top" secondItem="wRa-Un-FRw" secondAttribute="bottom" constant="8" id="XJp-CK-p9Q"/>
+                            <constraint firstItem="CER-z4-rjg" firstAttribute="leading" secondItem="9wq-6t-LS5" secondAttribute="leadingMargin" id="fjZ-fz-FtT"/>
+                            <constraint firstItem="wRa-Un-FRw" firstAttribute="top" secondItem="ac8-4p-9GC" secondAttribute="bottom" id="mea-QR-cDc"/>
+                            <constraint firstItem="rki-mW-zxU" firstAttribute="leading" secondItem="9wq-6t-LS5" secondAttribute="leadingMargin" id="oJY-Ko-qWS"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="340" height="350"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="yII-WV-dtp" id="Rel-mQ-6f9"/>
+                        <outlet property="distanceLabel" destination="rki-mW-zxU" id="QbY-GW-FYF"/>
+                        <outlet property="mapView" destination="wRa-Un-FRw" id="5fj-nw-5zp"/>
+                        <outlet property="statusLabel" destination="Y8k-Gr-gSH" id="X9d-2Z-TtI"/>
+                        <outlet property="typeLabel" destination="CER-z4-rjg" id="yFQ-gq-HGZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zO4-U8-BLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-209" y="200"/>
+        </scene>
+    </scenes>
+</document>

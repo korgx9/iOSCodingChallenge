@@ -27,6 +27,8 @@
 		6F5B5BF51F9CFFD4001881CB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BF41F9CFFD4001881CB /* MapViewController.m */; };
 		6F5B5BF71F9D049D001881CB /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F5B5BF61F9D049D001881CB /* Map.storyboard */; };
 		6F5B5BFA1F9D0BD4001881CB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BF91F9D0BD4001881CB /* UIViewController.swift */; };
+		6F5B5BFC1F9D0F1C001881CB /* PoiDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F5B5BFB1F9D0F1C001881CB /* PoiDetails.storyboard */; };
+		6F5B5BFE1F9D0F4B001881CB /* PoiDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BFD1F9D0F4B001881CB /* PoiDetailsViewController.swift */; };
 		F5898B7D2C278617E4DAFA33 /* Pods_iOSCodingChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DE380B3969EAB00132D598 /* Pods_iOSCodingChallengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,8 @@
 		6F5B5BF41F9CFFD4001881CB /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		6F5B5BF61F9D049D001881CB /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		6F5B5BF91F9D0BD4001881CB /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		6F5B5BFB1F9D0F1C001881CB /* PoiDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PoiDetails.storyboard; sourceTree = "<group>"; };
+		6F5B5BFD1F9D0F4B001881CB /* PoiDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoiDetailsViewController.swift; sourceTree = "<group>"; };
 		7881C802ED0AF7AF66E771B2 /* Pods_iOSCodingChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSCodingChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D6DD1733CBC56FE28A6071 /* Pods-iOSCodingChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCodingChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCodingChallenge/Pods-iOSCodingChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		F5567623861A94A4CACC43A4 /* Pods-iOSCodingChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCodingChallengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCodingChallengeUITests/Pods-iOSCodingChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 				6F5B5BB81F9CED90001881CB /* Info.plist */,
 				6F5B5BDA1F9CEF96001881CB /* config.plist */,
 				6F5B5BDC1F9CEFCF001881CB /* dist.config.plist */,
+				6F5B5BF21F9CFFD3001881CB /* iOSCodingChallenge-Bridging-Header.h */,
 			);
 			path = iOSCodingChallenge;
 			sourceTree = "<group>";
@@ -189,7 +194,7 @@
 				6F5B5BEA1F9CF7F5001881CB /* PoisListViewController.swift */,
 				6F5B5BF31F9CFFD4001881CB /* MapViewController.h */,
 				6F5B5BF41F9CFFD4001881CB /* MapViewController.m */,
-				6F5B5BF21F9CFFD3001881CB /* iOSCodingChallenge-Bridging-Header.h */,
+				6F5B5BFD1F9D0F4B001881CB /* PoiDetailsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 			children = (
 				6F5B5BB01F9CED90001881CB /* Main.storyboard */,
 				6F5B5BF61F9D049D001881CB /* Map.storyboard */,
+				6F5B5BFB1F9D0F1C001881CB /* PoiDetails.storyboard */,
 			);
 			name = Storyboards;
 			path = ..;
@@ -361,6 +367,7 @@
 				6F5B5BB41F9CED90001881CB /* Assets.xcassets in Resources */,
 				6F5B5BB21F9CED90001881CB /* Main.storyboard in Resources */,
 				6F5B5BF71F9D049D001881CB /* Map.storyboard in Resources */,
+				6F5B5BFC1F9D0F1C001881CB /* PoiDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +559,7 @@
 				6F5B5BFA1F9D0BD4001881CB /* UIViewController.swift in Sources */,
 				6F5B5BF11F9CFA09001881CB /* Coordinate.swift in Sources */,
 				6F5B5BE31F9CF2AF001881CB /* AppAPI.swift in Sources */,
+				6F5B5BFE1F9D0F4B001881CB /* PoiDetailsViewController.swift in Sources */,
 				6F5B5BF51F9CFFD4001881CB /* MapViewController.m in Sources */,
 				6F5B5BE61F9CF321001881CB /* Manager.swift in Sources */,
 				6F5B5BE11F9CF219001881CB /* Config.swift in Sources */,
