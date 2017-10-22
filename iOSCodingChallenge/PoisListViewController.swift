@@ -35,6 +35,8 @@ class PoisListViewController: UIViewController {
         
         title = viewTitle
         
+        removeBackButtonText()
+        
         tableView.delegate = self
         tableView.dataSource = self
         
