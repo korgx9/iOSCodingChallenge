@@ -27,6 +27,8 @@ class PoisListViewController: UIViewController {
     private var isRequestSent = true
     
     fileprivate let cellIdentifier = "Cell"
+    fileprivate let detailsStoryBoardIdentifier = "PoiDetails"
+    fileprivate let detailsVCIdentifier = "PoiDetailsViewController"
     
     fileprivate var poiList: PoiWrapper = PoiWrapper()
     
@@ -101,5 +103,15 @@ extension PoisListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = poi.type
         cell.detailTextLabel?.text = poi.state
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let row = indexPath.row
+        let poi = poiList.pois[row]
+        let storyboard = UIStoryboard(name: detailsStoryBoardIdentifier, bundle: nil)
+        let detailsVC = storyboard.instantiateViewController(withIdentifier: detailsVCIdentifier) as! PoiDetailsViewController
+        detailsVC.poi = poi
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
 }

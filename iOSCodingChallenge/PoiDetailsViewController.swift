@@ -23,7 +23,6 @@ class PoiDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         mapView.setCenter(poi.getCoordinates(), animated: true)
-        mapView.showsUserLocation = true
         mapView.logoView.isHidden = true
         mapView.setCenter(poi.getCoordinates(), zoomLevel: 15, animated: true)
         
