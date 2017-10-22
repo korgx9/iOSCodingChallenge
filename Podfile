@@ -11,6 +11,7 @@ target 'iOSCodingChallenge' do
   pod 'AlamofireObjectMapper', '~> 4.1.0'
   pod 'SVProgressHUD'
   pod 'Mapbox-iOS-SDK'
+  pod 'MapboxGeocoder.swift', '~> 0.6'
 
   target 'iOSCodingChallengeTests' do
     inherit! :search_paths

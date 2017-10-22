@@ -8,6 +8,7 @@
 
 import UIKit
 import Mapbox
+import MapboxGeocoder
 
 class PoiDetailsViewController: UIViewController {
     
@@ -19,6 +20,8 @@ class PoiDetailsViewController: UIViewController {
     
     var poi = Poi()
     var locationManager: CLLocationManager!
+    
+    private let geocoder = Geocoder.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +40,8 @@ class PoiDetailsViewController: UIViewController {
         statusLabel.text = "Status: \(poi.state)"
         addressLabel.text = ""
         distanceLabel.text = getDistanceText()
+        
+        reversGeoCoding()
     }
     
     func getDistanceText() -> String {
@@ -58,6 +63,17 @@ class PoiDetailsViewController: UIViewController {
         }
         else {
             return notAllowedText
+        }
+    }
+    
+    func reversGeoCoding() {
+        let options = ReverseGeocodeOptions(coordinate: poi.getCoordinates())
+        
+        let _ = geocoder.geocode(options) { [weak self] (placemarks, attribution, error) in
+            guard let selfNotNill = self else {return}
+            guard let placemark = placemarks?.first else {return}
+            
+            selfNotNill.addressLabel.text = placemark.qualifiedName
         }
     }
 }
