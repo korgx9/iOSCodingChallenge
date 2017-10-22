@@ -25,6 +25,11 @@ class PoisListViewController: UIViewController {
         ne: CLLocationCoordinate2D(latitude: 53.817100, longitude: 10.444173))
     
     private var isRequestSent = true
+    private var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(PoisListViewController.getListOfPoi as (PoisListViewController) -> () -> ()), for: .valueChanged)
+        return refreshControl
+    }()
     
     fileprivate let cellIdentifier = "Cell"
     fileprivate let detailsStoryBoardIdentifier = "PoiDetails"
@@ -32,6 +37,7 @@ class PoisListViewController: UIViewController {
     
     fileprivate var poiList: PoiWrapper = PoiWrapper()
     fileprivate var locationManager: CLLocationManager!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +55,9 @@ class PoisListViewController: UIViewController {
             target: self,
             action: #selector(PoisListViewController.mapBarButtonTapped(_:)))
         navigationItem.rightBarButtonItem = mapBarButton
+        
+        tableView.addSubview(refreshControl)
+        SVProgressHUD.show()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -79,7 +88,6 @@ class PoisListViewController: UIViewController {
     // MARK: - API Request
     func getListOfPoi() {
         isRequestSent = true
-        SVProgressHUD.show()
         RemoteApiFactory.instance.getPoiListBy(bounds: hamburgBounds)
             .validate()
             .responseObject { [weak self] (response: DataResponse<PoiWrapper>) in
@@ -97,6 +105,7 @@ class PoisListViewController: UIViewController {
                 }
                 selfNotNil.isRequestSent = false
                 SVProgressHUD.dismiss()
+                selfNotNil.refreshControl.endRefreshing()
         }
     }
 }
