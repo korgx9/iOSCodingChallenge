@@ -112,6 +112,25 @@ extension PoisListViewController: UITableViewDelegate, UITableViewDataSource {
         let storyboard = UIStoryboard(name: detailsStoryBoardIdentifier, bundle: nil)
         let detailsVC = storyboard.instantiateViewController(withIdentifier: detailsVCIdentifier) as! PoiDetailsViewController
         detailsVC.poi = poi
-        navigationController?.pushViewController(detailsVC, animated: true)
+        detailsVC.preferredContentSize = CGSize(width: 300, height: 350)
+        detailsVC.modalPresentationStyle = .popover
+        detailsVC.modalTransitionStyle = .crossDissolve
+        
+        let popover = detailsVC.popoverPresentationController
+        popover?.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0)
+        popover?.delegate = self
+        popover?.sourceView = view
+        
+        detailsVC.popoverPresentationController?.sourceRect =
+            CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        
+        present(detailsVC, animated: true, completion: nil)
+    }
+}
+
+extension PoisListViewController: UIPopoverPresentationControllerDelegate {
+    // MARK: - Popver delegates
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
 }
