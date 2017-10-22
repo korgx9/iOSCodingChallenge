@@ -10,6 +10,7 @@ target 'iOSCodingChallenge' do
   pod 'ObjectMapper', '~> 2.2.9'
   pod 'AlamofireObjectMapper', '~> 4.1.0'
   pod 'SVProgressHUD'
+  pod 'Mapbox-iOS-SDK'
 
   target 'iOSCodingChallengeTests' do
     inherit! :search_paths
