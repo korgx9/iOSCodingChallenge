@@ -34,4 +34,9 @@ class Poi: NSObject, Mappable {
             latitude: coordinate.latitude,
             longitude: coordinate.longitude)
     }
+    
+    func distanceFrom(point: CLLocation) -> Double {
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        return location.distance(from: point)
+    }
 }

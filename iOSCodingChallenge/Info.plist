@@ -36,5 +36,7 @@
 	</array>
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1Ijoia29yZ3g5IiwiYSI6ImNqOTFqcjMxMTJhcTUzMnBsNGg5MGpwanAifQ.XnZtOKsqBDIfiDFtTMmLsg</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Enable location service to determine distance between you and taxi</string>
 </dict>
 </plist>

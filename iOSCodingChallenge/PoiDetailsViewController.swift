@@ -18,13 +18,14 @@ class PoiDetailsViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     
     var poi = Poi()
+    var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mapView.setCenter(poi.getCoordinates(), animated: true)
         mapView.logoView.isHidden = true
-        mapView.setCenter(poi.getCoordinates(), zoomLevel: 15, animated: true)
+        mapView.setCenter(poi.getCoordinates(), zoomLevel: 16, animated: true)
         
         let poiAnnotation = MGLPointAnnotation()
         poiAnnotation.coordinate = poi.getCoordinates()
@@ -35,6 +36,28 @@ class PoiDetailsViewController: UIViewController {
         typeLabel.text = "Type: \(poi.type)"
         statusLabel.text = "Status: \(poi.state)"
         addressLabel.text = ""
-        distanceLabel.text = ""
+        distanceLabel.text = getDistanceText()
+    }
+    
+    func getDistanceText() -> String {
+        
+        let notAllowedText = NSLocalizedString("Please, enable location service", comment: "Ditance label text if no GPS enabled")
+        
+        if CLLocationManager.locationServicesEnabled() {
+            switch(CLLocationManager.authorizationStatus()) {
+            case .notDetermined, .restricted, .denied:
+                return notAllowedText
+            case .authorizedWhenInUse:
+                guard let locationManager = locationManager else {return notAllowedText}
+                guard let location = locationManager.location else {return notAllowedText}
+                return NSLocalizedString("Distance from you:", comment: "Label text distance from")  + " "
+                    + String(format: "%.2f", poi.distanceFrom(point: location))
+                    + NSLocalizedString(" meters", comment: "Label text distance measure")
+            default: return notAllowedText
+            }
+        }
+        else {
+            return notAllowedText
+        }
     }
 }

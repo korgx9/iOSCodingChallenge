@@ -31,6 +31,7 @@ class PoisListViewController: UIViewController {
     fileprivate let detailsVCIdentifier = "PoiDetailsViewController"
     
     fileprivate var poiList: PoiWrapper = PoiWrapper()
+    fileprivate var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,7 @@ class PoisListViewController: UIViewController {
         super.viewDidAppear(animated)
         
         getListOfPoi()
+        determineMyCurrentLocation()
     }
     
     // MARK: - Miscellaneous Methods
@@ -61,6 +63,17 @@ class PoisListViewController: UIViewController {
         let storyboard = UIStoryboard(name: mapStoryboardIdentifier, bundle: nil)
         let mapVC = storyboard.instantiateViewController(withIdentifier: mapVCIdentifier) as! MapViewController
         navigationController?.pushViewController(mapVC, animated: true)
+    }
+    
+    func determineMyCurrentLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
     }
     
     // MARK: - API Request
@@ -112,6 +125,7 @@ extension PoisListViewController: UITableViewDelegate, UITableViewDataSource {
         let storyboard = UIStoryboard(name: detailsStoryBoardIdentifier, bundle: nil)
         let detailsVC = storyboard.instantiateViewController(withIdentifier: detailsVCIdentifier) as! PoiDetailsViewController
         detailsVC.poi = poi
+        detailsVC.locationManager = locationManager
         detailsVC.preferredContentSize = CGSize(width: 300, height: 350)
         detailsVC.modalPresentationStyle = .popover
         detailsVC.modalTransitionStyle = .crossDissolve
@@ -132,5 +146,12 @@ extension PoisListViewController: UIPopoverPresentationControllerDelegate {
     // MARK: - Popver delegates
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
+    }
+}
+
+extension PoisListViewController: CLLocationManagerDelegate {
+    // MARK: - Location manager delegates
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error \(error)")
     }
 }
