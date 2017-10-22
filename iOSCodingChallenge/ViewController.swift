@@ -20,7 +20,7 @@ class ViewController: UIViewController {
             .responseJSON { response in
                 switch response.result {
                 case .success:
-                    print(response.result.value)
+                    print(response.result.value ?? "No Value")
                     break
                 case .failure(let error):
                     print("Error: " + error.localizedDescription)

@@ -15,8 +15,11 @@ class PoisListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private let viewTitle = NSLocalizedString("TestTaxi", comment: "View title")
+    private let mapStoryboardIdentifier = "Map"
+    private let mapVCIdentifier = "MapViewController"
     private let hamburgBounds =  (53.356523, 9.625692, 53.817100, 10.444173)
+    private let viewTitle = NSLocalizedString("TestTaxi", comment: "View title")
+    private let mapButtonTitle = NSLocalizedString("Map", comment: "Button title switch to map")
     
     private var isRequestSent = true
     
@@ -31,12 +34,26 @@ class PoisListViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let mapBarButton = UIBarButtonItem(
+            title: mapButtonTitle,
+            style: .plain,
+            target: self,
+            action: #selector(PoisListViewController.mapBarButtonTapped(_:)))
+        navigationItem.rightBarButtonItem = mapBarButton
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         getListOfPoi()
+    }
+    
+    // MARK: - Miscellaneous Methods
+    func mapBarButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: mapStoryboardIdentifier, bundle: nil)
+        let mapVC = storyboard.instantiateViewController(withIdentifier: mapVCIdentifier) as! MapViewController
+        navigationController?.pushViewController(mapVC, animated: true)
     }
     
     // MARK: - API Request

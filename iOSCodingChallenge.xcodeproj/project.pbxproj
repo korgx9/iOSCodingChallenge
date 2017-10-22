@@ -26,6 +26,7 @@
 		6F5B5BEF1F9CF9B5001881CB /* Poi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BEE1F9CF9B5001881CB /* Poi.swift */; };
 		6F5B5BF11F9CFA09001881CB /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BF01F9CFA09001881CB /* Coordinate.swift */; };
 		6F5B5BF51F9CFFD4001881CB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BF41F9CFFD4001881CB /* MapViewController.m */; };
+		6F5B5BF71F9D049D001881CB /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F5B5BF61F9D049D001881CB /* Map.storyboard */; };
 		F5898B7D2C278617E4DAFA33 /* Pods_iOSCodingChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DE380B3969EAB00132D598 /* Pods_iOSCodingChallengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		6F5B5BF21F9CFFD3001881CB /* iOSCodingChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSCodingChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		6F5B5BF31F9CFFD4001881CB /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		6F5B5BF41F9CFFD4001881CB /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		6F5B5BF61F9D049D001881CB /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		7881C802ED0AF7AF66E771B2 /* Pods_iOSCodingChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSCodingChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D6DD1733CBC56FE28A6071 /* Pods-iOSCodingChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCodingChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCodingChallenge/Pods-iOSCodingChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		F5567623861A94A4CACC43A4 /* Pods-iOSCodingChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCodingChallengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCodingChallengeUITests/Pods-iOSCodingChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				6F5B5BB01F9CED90001881CB /* Main.storyboard */,
+				6F5B5BF61F9D049D001881CB /* Map.storyboard */,
 			);
 			name = Storyboards;
 			path = ..;
@@ -348,6 +351,7 @@
 				6F5B5BB71F9CED90001881CB /* LaunchScreen.storyboard in Resources */,
 				6F5B5BB41F9CED90001881CB /* Assets.xcassets in Resources */,
 				6F5B5BB21F9CED90001881CB /* Main.storyboard in Resources */,
+				6F5B5BF71F9D049D001881CB /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
