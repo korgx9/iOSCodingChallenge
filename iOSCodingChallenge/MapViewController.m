@@ -35,4 +35,21 @@
                          animated: NO];
 }
 
+// MARK: - MGLMapView Delegates
+- (BOOL)mapView:(MGLMapView *)mapView shouldChangeFromCamera:(MGLMapCamera *)oldCamera toCamera:(MGLMapCamera *)newCamera {
+    MGLMapCamera *currentCamera = mapView.camera;
+    CLLocationCoordinate2D newCameraCenter = newCamera.centerCoordinate;
+    mapView.camera = newCamera;
+    MGLCoordinateBounds newVisibleCoordinates = mapView.visibleCoordinateBounds;
+    mapView.camera = currentCamera;
+    
+    MGLCoordinateBounds hamburgBounds = MGLCoordinateBoundsMake(CLLocationCoordinate2DMake(53.17245, 9.644633),
+                                                                CLLocationCoordinate2DMake(53.868691, 10.372931));
+    
+    BOOL inside = MGLCoordinateInCoordinateBounds(newCameraCenter, hamburgBounds);
+    BOOL intersects = MGLCoordinateInCoordinateBounds(newVisibleCoordinates.ne, hamburgBounds)
+    && MGLCoordinateInCoordinateBounds(newVisibleCoordinates.sw, hamburgBounds);
+    return inside && intersects;
+}
+
 @end
