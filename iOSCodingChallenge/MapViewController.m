@@ -28,6 +28,7 @@
     _mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _mapView.delegate = self;
     _mapView.logoView.hidden = YES;
+    _mapView.showsUserLocation = YES;
     _mapView.maximumZoomLevel = 22;
     _mapView.minimumZoomLevel = 8.5;
 
