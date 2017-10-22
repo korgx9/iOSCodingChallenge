@@ -12,8 +12,23 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //(53.694865, 9.757589 & 53.394655, 10.099891).
         
+        let hamburgBounds = (53.694865, 9.757589, 53.394655, 10.099891)
+        let req = RemoteApiFactory.instance.getPoiListBy(bounds: hamburgBounds)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    print(response.result.value)
+                    break
+                case .failure(let error):
+                    print("Error: " + error.localizedDescription)
+                    break
+                }
+        }
+        
+        debugPrint(req)
     }
 }
 
