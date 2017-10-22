@@ -11,6 +11,7 @@ import Alamofire
 import AlamofireObjectMapper
 import SVProgressHUD
 import Mapbox
+import DZNEmptyDataSet
 
 class PoisListViewController: UIViewController {
 
@@ -24,7 +25,6 @@ class PoisListViewController: UIViewController {
         sw: CLLocationCoordinate2D(latitude: 53.356523, longitude: 9.625692),
         ne: CLLocationCoordinate2D(latitude: 53.817100, longitude: 10.444173))
     
-    private var isRequestSent = true
     private var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(PoisListViewController.getListOfPoi as (PoisListViewController) -> () -> ()), for: .valueChanged)
@@ -34,7 +34,10 @@ class PoisListViewController: UIViewController {
     fileprivate let cellIdentifier = "Cell"
     fileprivate let detailsStoryBoardIdentifier = "PoiDetails"
     fileprivate let detailsVCIdentifier = "PoiDetailsViewController"
+    fileprivate let loadingText = NSLocalizedString("Loading ...", comment: "Loading text")
+    fileprivate let emptyText = NSLocalizedString("Nothing to show", comment: "No data fetched")
     
+    fileprivate var isRequestSent = true
     fileprivate var poiList: PoiWrapper = PoiWrapper()
     fileprivate var locationManager: CLLocationManager!
     
@@ -49,6 +52,8 @@ class PoisListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
         
         let mapBarButton = UIBarButtonItem(
             title: mapButtonTitle,
@@ -163,5 +168,31 @@ extension PoisListViewController: CLLocationManagerDelegate {
     // MARK: - Location manager delegates
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error \(error)")
+    }
+}
+
+extension PoisListViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    // MARK: - Empty dataset delegations
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        var text = ""
+        let font =  UIFont.systemFont(ofSize: 14)
+        let textColor = UIColor.lightGray
+        
+        if isRequestSent {
+            text = loadingText
+        }
+        else if poiList.pois.isEmpty {
+            text = emptyText
+        }
+        
+        return NSAttributedString(string: text, attributes:[NSFontAttributeName: font, NSForegroundColorAttributeName: textColor])
+    }
+    
+    func spaceHeight(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        return 18.0
+    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.white
     }
 }

@@ -12,6 +12,7 @@ target 'iOSCodingChallenge' do
   pod 'SVProgressHUD'
   pod 'Mapbox-iOS-SDK'
   pod 'MapboxGeocoder.swift', '~> 0.6'
+  pod 'DZNEmptyDataSet'
 
   target 'iOSCodingChallengeTests' do
     inherit! :search_paths
