@@ -48,6 +48,7 @@ class PoisListViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
         
         let mapBarButton = UIBarButtonItem(
             title: mapButtonTitle,
