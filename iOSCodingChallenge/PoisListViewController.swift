@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import AlamofireObjectMapper
-import SVProgressHUD
 import Mapbox
 import DZNEmptyDataSet
 
@@ -63,7 +62,6 @@ class PoisListViewController: UIViewController {
         navigationItem.rightBarButtonItem = mapBarButton
         
         tableView.addSubview(refreshControl)
-        SVProgressHUD.show()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -102,7 +100,7 @@ class PoisListViewController: UIViewController {
                 case .success:
                     if let poiList = response.result.value {
                         selfNotNil.poiList = poiList
-                        selfNotNil.tableView.reloadData()
+
                     }
                     break
                 case .failure(let error):
@@ -110,8 +108,8 @@ class PoisListViewController: UIViewController {
                     break
                 }
                 selfNotNil.isRequestSent = false
-                SVProgressHUD.dismiss()
                 selfNotNil.refreshControl.endRefreshing()
+                selfNotNil.tableView.reloadData()
         }
     }
 }

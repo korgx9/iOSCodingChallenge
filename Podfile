@@ -9,7 +9,6 @@ target 'iOSCodingChallenge' do
   pod 'Alamofire', '~> 4.4'
   pod 'ObjectMapper', '~> 2.2.9'
   pod 'AlamofireObjectMapper', '~> 4.1.0'
-  pod 'SVProgressHUD'
   pod 'Mapbox-iOS-SDK'
   pod 'MapboxGeocoder.swift', '~> 0.6'
   pod 'DZNEmptyDataSet'
