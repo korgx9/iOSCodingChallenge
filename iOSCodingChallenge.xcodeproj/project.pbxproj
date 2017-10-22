@@ -21,6 +21,10 @@
 		6F5B5BE11F9CF219001881CB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BE01F9CF219001881CB /* Config.swift */; };
 		6F5B5BE31F9CF2AF001881CB /* AppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BE21F9CF2AF001881CB /* AppAPI.swift */; };
 		6F5B5BE61F9CF321001881CB /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BE51F9CF321001881CB /* Manager.swift */; };
+		6F5B5BEB1F9CF7F5001881CB /* PoisListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BEA1F9CF7F5001881CB /* PoisListViewController.swift */; };
+		6F5B5BED1F9CF986001881CB /* PoiWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BEC1F9CF986001881CB /* PoiWrapper.swift */; };
+		6F5B5BEF1F9CF9B5001881CB /* Poi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BEE1F9CF9B5001881CB /* Poi.swift */; };
+		6F5B5BF11F9CFA09001881CB /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B5BF01F9CFA09001881CB /* Coordinate.swift */; };
 		F5898B7D2C278617E4DAFA33 /* Pods_iOSCodingChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DE380B3969EAB00132D598 /* Pods_iOSCodingChallengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +69,10 @@
 		6F5B5BE01F9CF219001881CB /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		6F5B5BE21F9CF2AF001881CB /* AppAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAPI.swift; sourceTree = "<group>"; };
 		6F5B5BE51F9CF321001881CB /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		6F5B5BEA1F9CF7F5001881CB /* PoisListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoisListViewController.swift; sourceTree = "<group>"; };
+		6F5B5BEC1F9CF986001881CB /* PoiWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoiWrapper.swift; sourceTree = "<group>"; };
+		6F5B5BEE1F9CF9B5001881CB /* Poi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poi.swift; sourceTree = "<group>"; };
+		6F5B5BF01F9CFA09001881CB /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		7881C802ED0AF7AF66E771B2 /* Pods_iOSCodingChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSCodingChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D6DD1733CBC56FE28A6071 /* Pods-iOSCodingChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCodingChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCodingChallenge/Pods-iOSCodingChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		F5567623861A94A4CACC43A4 /* Pods-iOSCodingChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCodingChallengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCodingChallengeUITests/Pods-iOSCodingChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,8 +146,10 @@
 				6F5B5BE01F9CF219001881CB /* Config.swift */,
 				6F5B5BE21F9CF2AF001881CB /* AppAPI.swift */,
 				6F5B5BE51F9CF321001881CB /* Manager.swift */,
+				6F5B5BE91F9CF7B9001881CB /* Models */,
+				6F5B5BE71F9CF797001881CB /* Controllers */,
+				6F5B5BE81F9CF7A2001881CB /* Storyboards */,
 				6F5B5BAE1F9CED90001881CB /* ViewController.swift */,
-				6F5B5BB01F9CED90001881CB /* Main.storyboard */,
 				6F5B5BB31F9CED90001881CB /* Assets.xcassets */,
 				6F5B5BB51F9CED90001881CB /* LaunchScreen.storyboard */,
 				6F5B5BB81F9CED90001881CB /* Info.plist */,
@@ -165,6 +175,33 @@
 				6F5B5BCE1F9CED91001881CB /* Info.plist */,
 			);
 			path = iOSCodingChallengeUITests;
+			sourceTree = "<group>";
+		};
+		6F5B5BE71F9CF797001881CB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6F5B5BEA1F9CF7F5001881CB /* PoisListViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		6F5B5BE81F9CF7A2001881CB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6F5B5BB01F9CED90001881CB /* Main.storyboard */,
+			);
+			name = Storyboards;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		6F5B5BE91F9CF7B9001881CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6F5B5BEC1F9CF986001881CB /* PoiWrapper.swift */,
+				6F5B5BEE1F9CF9B5001881CB /* Poi.swift */,
+				6F5B5BF01F9CFA09001881CB /* Coordinate.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		C2B11747E42B25B45ED15ABF /* Pods */ = {
@@ -483,8 +520,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F5B5BED1F9CF986001881CB /* PoiWrapper.swift in Sources */,
 				6F5B5BAF1F9CED90001881CB /* ViewController.swift in Sources */,
+				6F5B5BEB1F9CF7F5001881CB /* PoisListViewController.swift in Sources */,
 				6F5B5BAD1F9CED90001881CB /* AppDelegate.swift in Sources */,
+				6F5B5BEF1F9CF9B5001881CB /* Poi.swift in Sources */,
+				6F5B5BF11F9CFA09001881CB /* Coordinate.swift in Sources */,
 				6F5B5BE31F9CF2AF001881CB /* AppAPI.swift in Sources */,
 				6F5B5BE61F9CF321001881CB /* Manager.swift in Sources */,
 				6F5B5BE11F9CF219001881CB /* Config.swift in Sources */,
@@ -529,6 +570,7 @@
 				6F5B5BB11F9CED90001881CB /* Base */,
 			);
 			name = Main.storyboard;
+			path = iOSCodingChallenge;
 			sourceTree = "<group>";
 		};
 		6F5B5BB51F9CED90001881CB /* LaunchScreen.storyboard */ = {
