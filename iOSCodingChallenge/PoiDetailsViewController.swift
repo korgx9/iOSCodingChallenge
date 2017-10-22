@@ -36,7 +36,7 @@ class PoiDetailsViewController: UIViewController {
         poiAnnotation.subtitle = nil
         mapView.addAnnotation(poiAnnotation)
         
-        typeLabel.text = "Type: \(poi.type)"
+        typeLabel.text = "Type: \(poi.type): \(poi.id)"
         statusLabel.text = "Status: \(poi.state)"
         addressLabel.text = ""
         distanceLabel.text = getDistanceText()

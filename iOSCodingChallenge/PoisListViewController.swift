@@ -126,7 +126,7 @@ extension PoisListViewController: UITableViewDelegate, UITableViewDataSource {
         let poi = poiList.pois[row]
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: cellIdentifier)
         
-        cell.textLabel?.text = poi.type
+        cell.textLabel?.text = "\(poi.type): \(poi.id)"
         cell.detailTextLabel?.text = poi.state
         return cell
     }
